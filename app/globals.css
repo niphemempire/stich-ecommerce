@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+}
+
+:root {
+  --bg: #0A0A0A;
+  --ink: #FFFFFF;
+  --accent: #D4AF37;
+  --border-soft: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+@layer components {
+  .display-text {
+    @apply text-[140px] leading-[0.8] tracking-[-0.04em] font-black uppercase;
+  }
+  
+  .serif-italic {
+    @apply font-serif italic font-black text-[#D4AF37];
+  }
+
+  .border-soft {
+    @apply border-[rgba(255,255,255,0.1)];
+  }
+
+  .vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+}
